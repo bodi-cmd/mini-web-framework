@@ -16,8 +16,8 @@ programului, mult mai mare ca si volum de cod fata de input.
 
 
 ### Input Code
-```
-<body>  
+``` {.html language="html"}
+<body> 
     <div class="box">
         <h1><text>Counter:</text>@value</h1>
         <button class="box" if=[value < 10] action="Increment"><text>Increment</text></button>
@@ -53,7 +53,7 @@ CODE_END
 
 ### Output Code
 
-```
+``` {.html language="html"}
 <!--A parsat ok html-ul-->
 <!--A parsat ok codul-->
 <!DOCTYPE html>
@@ -135,7 +135,7 @@ variabile, numere intregi si operatii.
 
 ### Lex code
 
-```
+```{.c language="c"}
 %{
 #include "y.tab.h"
 %}
@@ -214,9 +214,9 @@ HTML Code
 <body>  
     <div class="box">
         <h1><text>Counter:</text>@value</h1>
-        <button class="box" if=[value < 10] 
-            action="Increment"><text>Increment</text></button>
+        <button class="box" if=[value < 10] action="Increment"><text>Increment</text></button>
         <button action="Reset" ><text>Reset</text></button>
+        <button action="StartCountDown" ><text>CountDown</text></button>
     </div>
 </body>
 ```
@@ -237,7 +237,7 @@ functii.
 
 Principala structura de date a codului este:
 
-```
+```{.c language="c"}
 typedef struct _stmt_node{
     union _statement stmt;
     struct _stmt_node *next;
@@ -248,7 +248,7 @@ Elementul next pointeaza la statement-ul succesor celui actual.
 Statement-ul este reprezentat de un union alcatuit din urmatoarele 3
 structuri:
 
-```
+```{.c language="c"}
 typedef union _statement{
     stmtEnum type;
     struct _assignation assignation;
@@ -262,7 +262,7 @@ typedef union _statement{
 
 -   o asignare, de exemplu: **value = value + 1**
 
-```
+```{.c language="c"}
 typedef struct _assignation{
     stmtEnum type;
     char* varname;
@@ -272,7 +272,7 @@ typedef struct _assignation{
 
 -   o declarare de variabila, de exemplu: **declare value = 0**
 
-```
+```{.c language="c"}
 typedef struct _varDeclarationStruct{
     stmtEnum type;
     char* varname;
@@ -282,7 +282,7 @@ typedef struct _varDeclarationStruct{
 
 -   o declarare de functie, de exemplu: **Reset {value = 0}**
 
-```
+```{.c language="c"}
 typedef struct _funcDeclarationStruct{
     stmtEnum type;
     char* funcname;
