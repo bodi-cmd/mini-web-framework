@@ -16,8 +16,8 @@ programului, mult mai mare ca si volum de cod fata de input.
 
 
 ### Input Code
-```
-<body>  {.html language="html"}
+``` {.html language="html"}
+<body> 
     <div class="box">
         <h1><text>Counter:</text>@value</h1>
         <button class="box" if=[value < 10] action="Increment"><text>Increment</text></button>
