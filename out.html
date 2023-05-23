@@ -1,0 +1,68 @@
+<!--A parsat ok html-ul-->
+<!--A parsat ok codul-->
+<!DOCTYPE html>
+<html lang="en">
+<head>    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework example</title>
+</head>
+<body>
+
+ <div class="box">
+ 	<h1>
+ 		Counter:
+ 		<span class="value-binding"></span>
+ 	</h1>
+ 	<button class="box cond-with-id0" onclick="Increment()">
+ 		Increment
+ 	</button>
+ 	<button onclick="Reset()">
+ 		Reset
+ 	</button>
+ </div>
+</body>
+
+<script>
+
+const conditions = [
+{
+   condition: () => getVar('value') < 10,
+   element: document.querySelector(".cond-with-id0")
+},
+]
+const variables = {
+'value' : {
+    value: 0,
+    elements: document.querySelectorAll('.value-binding')
+},
+}
+
+const updateUI = (varName, newValue) => {
+    variables[varName].elements.forEach(element=>element.innerHTML = newValue);
+    conditions.forEach((cond, i)=>{
+        if(cond.condition()){
+            cond.element.style.display = '';
+        }
+        else{
+            cond.element.style.display = 'none';
+        }
+    });
+}
+const updateVar = (varName, value) => {
+    variables[varName].value = value;
+    updateUI(varName, value);
+}
+const getVar = (varName) => {
+    return variables[varName].value;
+}
+
+ const Increment = () => {
+ 	updateVar('value',getVar('value') + 1)
+ }
+ const Reset = () => {
+ 	updateVar('value',0)
+ }
+
+
+</script>
