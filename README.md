@@ -282,7 +282,7 @@ typedef struct _varDeclarationStruct{
 
 -   o declarare de functie, de exemplu: **Reset {value = 0}**
 
-```
+```{.c language="c"}
 typedef struct _funcDeclarationStruct{
     stmtEnum type;
     char* funcname;
