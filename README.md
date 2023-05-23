@@ -135,7 +135,7 @@ variabile, numere intregi si operatii.
 
 ### Lex code
 
-```{.html language="c"}
+```{.c language="c"}
 %{
 #include "y.tab.h"
 %}
@@ -237,7 +237,7 @@ functii.
 
 Principala structura de date a codului este:
 
-```
+```{.c language="c"}
 typedef struct _stmt_node{
     union _statement stmt;
     struct _stmt_node *next;
@@ -248,7 +248,7 @@ Elementul next pointeaza la statement-ul succesor celui actual.
 Statement-ul este reprezentat de un union alcatuit din urmatoarele 3
 structuri:
 
-```
+```{.c language="c"}
 typedef union _statement{
     stmtEnum type;
     struct _assignation assignation;
@@ -262,7 +262,7 @@ typedef union _statement{
 
 -   o asignare, de exemplu: **value = value + 1**
 
-```
+```{.c language="c"}
 typedef struct _assignation{
     stmtEnum type;
     char* varname;
@@ -272,7 +272,7 @@ typedef struct _assignation{
 
 -   o declarare de variabila, de exemplu: **declare value = 0**
 
-```
+```{.c language="c"}
 typedef struct _varDeclarationStruct{
     stmtEnum type;
     char* varname;
