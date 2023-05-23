@@ -214,9 +214,9 @@ HTML Code
 <body>  
     <div class="box">
         <h1><text>Counter:</text>@value</h1>
-        <button class="box" if=[value < 10] 
-            action="Increment"><text>Increment</text></button>
+        <button class="box" if=[value < 10] action="Increment"><text>Increment</text></button>
         <button action="Reset" ><text>Reset</text></button>
+        <button action="StartCountDown" ><text>CountDown</text></button>
     </div>
 </body>
 ```
