@@ -160,22 +160,30 @@ delay               return DELAY;
 CODE_START   return CODE_START;
 CODE_END     return CODE_END;
 
-[0-9]+          {
-                   yylval.integer = atoi(yytext);
-                   return INTEGER;
-                }
-@[a-z][_a-zA-Z0-9]*         {yylval.varname = strdup(yytext);
-                           return BINDING;}
-[a-z][_a-zA-Z0-9]*         {yylval.varname = strdup(yytext);
-                           return VARIABLE;}
-[A-Z][_a-zA-Z0-9]*         {yylval.funcname = strdup(yytext);
-                           return FUNCNAME;}
-
-=\"[^\"]*\"               {yylval.value = strdup(yytext);;
-                           return VALUE;}
-\<text\>[a-zA-Z0-9 \.!:;-_]*\<\/text\>        {yylval.string = strdup(yytext);;
-                           return STRING;}
-[ \t\n]                    ;
+[0-9]+                      {
+                               yylval.integer = atoi(yytext);
+                               return INTEGER;
+                            }
+@[a-z][_a-zA-Z0-9]*         {
+                                yylval.varname = strdup(yytext);
+                                return BINDING;
+                            }
+[a-z][_a-zA-Z0-9]*          {   yylval.varname = strdup(yytext);
+                                return VARIABLE;
+                            }
+[A-Z][_a-zA-Z0-9]*          {
+                                yylval.funcname = strdup(yytext);
+                                return FUNCNAME;
+                            }
+=\"[^\"]*\"                 {
+                                yylval.value = strdup(yytext);;
+                                return VALUE;
+                            }
+\<text\>[a-zA-Z0-9 \.!:;-_]*\<\/text\>        {
+                                                    yylval.string = strdup(yytext);;
+                                                    return STRING;
+                                              }
+[ \t\n]                     ;
 ```
 
 **YACC**
