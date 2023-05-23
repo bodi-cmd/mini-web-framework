@@ -17,7 +17,7 @@ programului, mult mai mare ca si volum de cod fata de input.
 
 ### Input Code
 ```
-<body>  
+<body>  {.html language="html"}
     <div class="box">
         <h1><text>Counter:</text>@value</h1>
         <button class="box" if=[value < 10] action="Increment"><text>Increment</text></button>
@@ -53,7 +53,7 @@ CODE_END
 
 ### Output Code
 
-```
+``` {.html language="html"}
 <!--A parsat ok html-ul-->
 <!--A parsat ok codul-->
 <!DOCTYPE html>
@@ -135,7 +135,7 @@ variabile, numere intregi si operatii.
 
 ### Lex code
 
-```
+```{.html language="c"}
 %{
 #include "y.tab.h"
 %}
