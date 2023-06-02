@@ -253,7 +253,7 @@ typedef struct _stmt_node{
 ```
 
 Elementul next pointeaza la statement-ul succesor celui actual.
-Statement-ul este reprezentat de un union alcatuit din urmatoarele 3
+Statement-ul este reprezentat de un union alcatuit din urmatoarele 6
 structuri:
 
 ```{.c language="c"}
